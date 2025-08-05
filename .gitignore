@@ -1,0 +1,73 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Yarn
+yarn.lock
+.pnp.*
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Test output
+coverage/
+*.lcov
+
+# Misc
+*.log
+*.tmp
+*.swp
+*.bak
+
+# TypeScript
+*.d.ts.map
+
+# Next.js
+.next/
+out/
+
+# React Native
+.expo/
+.expo-shared/
+
+# Storybook
+.storybook-out/
+
+# Svelte
+.svelte-kit/
+
+# Other package managers
+package-lock.json
+pnpm-lock.yaml
+
+# Local dev
+*.local

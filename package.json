@@ -1,0 +1,27 @@
+{
+  "name": "rlost-cities",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@github-junuxyz:junuxyz/RLost-cities",
+  "author": "junuxyz <216036880+junuxyz@users.noreply.github.com>",
+  "workspaces": ["frontend", "shared"],
+  "scripts": {
+    "dev": "concurrently \"yarn dev:fe\" \"yarn dev:be\"",
+    "dev:fe": "cd frontend && yarn dev",
+    "dev:be": "cd backend && uv run uvicorn main:app --reload",
+    "install:all": "yarn && cd backend && uv sync",
+    "install:be": "cd backend && uv sync",
+    "prepare": "husky install"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,jsx,json,css,md}": "prettier --write"
+  }
+}
