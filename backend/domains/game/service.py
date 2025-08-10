@@ -136,6 +136,19 @@ def turn(
     put(game, play_card, player, play_target, play_color)
     draw(game, player, draw_source, draw_color)
 
+    # If the draw emptied the deck, the game is over. Compute final scores and
+    # mark the phase accordingly. Otherwise, advance to the next player's turn.
+    if not game.deck:
+        game.phase = "GAME_OVER"
+        # Compute and store final scores on players
+        for pl in game.players:
+            pl.score = calculate_score(pl)
+        return
+
+    # Prepare for next player's turn
+    game.current_player = 1 - game.current_player
+    game.phase = "PLAY"
+
 
 # Scoring ------------------------------------------------------------------
 
