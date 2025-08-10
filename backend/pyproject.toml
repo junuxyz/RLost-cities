@@ -3,5 +3,57 @@ name = "backend"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = []
+
+[project.optional-dependencies]
+# Development / QA toolchain for pre-commit
+dev = [
+    "pre-commit>=3.8.0",
+    "ruff>=0.5.5",
+    "mypy>=1.10.0",
+]
+
+[tool.ruff]
+# Target Python 3.9 runtime
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "E", "F", "W", # pycodestyle / pyflakes
+  "I",             # isort (imports)
+  "N",             # pep8-naming
+  "UP",            # pyupgrade
+  "B",             # flake8-bugbear
+  "SIM",           # flake8-simplify
+  "C4",            # flake8-comprehensions
+  "ARG",           # flake8-unused-arguments
+  "S",             # flake8-bandit (security)
+  "RUF"
+]
+ignore = [
+  "E501",
+]
+fix = true
+
+[tool.ruff.format]
+# Use Ruff's formatter (Black-compatible)
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+
+[tool.mypy]
+python_version = "3.9"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+strict_optional = true
+disallow_any_generics = true
+check_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+show_error_codes = true
