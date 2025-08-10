@@ -71,3 +71,60 @@ pnpm-lock.yaml
 
 # Local dev
 *.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python packaging
+*.egg
+*.egg-info/
+.eggs/
+MANIFEST
+
+# Python build artifacts
+*.so
+*.pyd
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env.bak
+.python-version
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Type checking / linting
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SQLite / local DBs
+*.sqlite3
+*.db
+
+# Tooling
+.pyre/
+.dmypy.json
+.dmypy/
+
+# ML / data artifacts (adjust as needed)
+**/ml-training/artifacts/
+**/ml-training/outputs/
