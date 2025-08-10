@@ -132,7 +132,19 @@ def turn(
     draw_source: DrawSource,
     draw_color: "CardColor | None" = None,
 ) -> None:
-    """Execute a full turn for the player (play/discard then draw)."""
+    """Execute a full turn for the given player.
+
+    Order of operations:
+      1) Place a card from the player's hand onto an expedition or discard pile
+         via `put` using the provided `play_*` parameters.
+      2) Draw a card either from the deck or a discard pile via `draw` using the
+         provided `draw_*` parameters.
+
+    Side effects:
+      - If drawing empties the deck, marks the game phase as `GAME_OVER` and
+        computes/stores each player's final score in `player.score`.
+      - Otherwise, advances `current_player` and sets phase back to `PLAY`.
+    """
     put(game, play_card, player, play_target, play_color)
     draw(game, player, draw_source, draw_color)
 
