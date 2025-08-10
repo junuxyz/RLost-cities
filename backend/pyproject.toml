@@ -18,6 +18,7 @@ dev = [
 # Target Python 3.9 runtime
 target-version = "py39"
 line-length = 100
+fix = true
 
 [tool.ruff.lint]
 select = [
@@ -35,7 +36,6 @@ select = [
 ignore = [
   "E501",
 ]
-fix = true
 
 [tool.ruff.format]
 # Use Ruff's formatter (Black-compatible)
